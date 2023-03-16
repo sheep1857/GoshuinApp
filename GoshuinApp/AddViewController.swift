@@ -13,16 +13,10 @@ class AddViewController: UIViewController {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var adressTextField: UITextField!
     @IBOutlet var memoTextView: UITextView!
-    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        //ボタンを丸くする
-        saveButton.layer.cornerRadius = saveButton.bounds.height/2
-        saveButton.layer.masksToBounds = true
         
         // Realmの中身を確認するためのprint文
         print(Realm.Configuration.defaultConfiguration.fileURL!)

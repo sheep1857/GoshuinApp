@@ -18,14 +18,12 @@ class EditViewController: UIViewController {
     
     @IBOutlet var editTextField: UITextField!
     @IBOutlet var editTextView: UITextView!
-    @IBOutlet var updateButton: UIButton!
+    @IBOutlet var updateButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // ボタンを丸くする
-        updateButton.layer.cornerRadius = updateButton.bounds.height/2
-        updateButton.layer.masksToBounds = true
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
