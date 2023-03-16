@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68D5040429C35EA000151275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040329C35EA000151275 /* AppDelegate.swift */; };
+		68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040529C35EA000151275 /* SceneDelegate.swift */; };
+		68D5040829C35EA000151275 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040729C35EA000151275 /* HomeViewController.swift */; };
+		68D5040B29C35EA000151275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D5040929C35EA000151275 /* Main.storyboard */; };
+		68D5040D29C35EA100151275 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D5040C29C35EA100151275 /* Assets.xcassets */; };
+		68D5041029C35EA100151275 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D5040E29C35EA100151275 /* LaunchScreen.storyboard */; };
+		68D5043129C35F3700151275 /* プラスアイコン２ 茶.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041829C35F3600151275 /* プラスアイコン２ 茶.png */; };
+		68D5043229C35F3700151275 /* プラスアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041929C35F3600151275 /* プラスアイコン.png */; };
+		68D5043329C35F3700151275 /* cl_地図アイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041A29C35F3600151275 /* cl_地図アイコン.png */; };
+		68D5043429C35F3700151275 /* リストアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041B29C35F3600151275 /* リストアイコン.png */; };
+		68D5043529C35F3700151275 /* 王子神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041C29C35F3600151275 /* 王子神社.jpeg */; };
+		68D5043629C35F3700151275 /* IMG_5870.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041D29C35F3600151275 /* IMG_5870.jpg */; };
+		68D5043729C35F3700151275 /* 画像アップロード.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041E29C35F3600151275 /* 画像アップロード.png */; };
+		68D5043829C35F3700151275 /* ホームアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5041F29C35F3600151275 /* ホームアイコン.png */; };
+		68D5043929C35F3700151275 /* 二宮神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042029C35F3600151275 /* 二宮神社.jpeg */; };
+		68D5043A29C35F3700151275 /* プラスアイコン２.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042129C35F3600151275 /* プラスアイコン２.png */; };
+		68D5043B29C35F3700151275 /* 神社サンプル.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042229C35F3600151275 /* 神社サンプル.jpeg */; };
+		68D5043C29C35F3700151275 /* ざらざら.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042329C35F3600151275 /* ざらざら.jpeg */; };
+		68D5043D29C35F3700151275 /* clホームアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042429C35F3600151275 /* clホームアイコン.png */; };
+		68D5043E29C35F3700151275 /* 赤坂氷川神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042529C35F3600151275 /* 赤坂氷川神社.jpeg */; };
+		68D5043F29C35F3700151275 /* LA素材.ai in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042629C35F3600151275 /* LA素材.ai */; };
+		68D5044029C35F3700151275 /* 櫻井神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042729C35F3600151275 /* 櫻井神社.jpeg */; };
+		68D5044129C35F3700151275 /* top背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042829C35F3600151275 /* top背景.png */; };
+		68D5044229C35F3700151275 /* cl_リストアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042929C35F3600151275 /* cl_リストアイコン.png */; };
+		68D5044329C35F3700151275 /* ロゴ.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042A29C35F3600151275 /* ロゴ.png */; };
+		68D5044429C35F3700151275 /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042B29C35F3600151275 /* 背景.png */; };
+		68D5044529C35F3700151275 /* l_プラスアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042C29C35F3600151275 /* l_プラスアイコン.png */; };
+		68D5044629C35F3700151275 /* 地図アイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042D29C35F3600151275 /* 地図アイコン.png */; };
+		68D5044729C35F3700151275 /* 稲荷神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042E29C35F3600151275 /* 稲荷神社.jpeg */; };
+		68D5044829C35F3700151275 /* 赤城神社.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 68D5042F29C35F3600151275 /* 赤城神社.jpeg */; };
+		68D5044929C35F3700151275 /* pngwing.com.png in Resources */ = {isa = PBXBuildFile; fileRef = 68D5043029C35F3600151275 /* pngwing.com.png */; };
+		68D5044B29C3651800151275 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5044A29C3651800151275 /* MapViewController.swift */; };
+		68D5044E29C3682000151275 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D5044D29C3682000151275 /* CoreLocation.framework */; };
+		68D5045129C3770E00151275 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 68D5045029C3770E00151275 /* Realm */; };
+		68D5045329C3770E00151275 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 68D5045229C3770E00151275 /* RealmSwift */; };
+		68D5045529C37C3A00151275 /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045429C37C3A00151275 /* RealmData.swift */; };
+		68D5045729C37CE700151275 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045629C37CE700151275 /* AddViewController.swift */; };
+		68D5045929C3811100151275 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045829C3811100151275 /* ListTableViewController.swift */; };
+		68D5045B29C3827900151275 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045A29C3827900151275 /* EditViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		68D5040029C35EA000151275 /* GoshuinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoshuinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D5040329C35EA000151275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		68D5040529C35EA000151275 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		68D5040729C35EA000151275 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		68D5040A29C35EA000151275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68D5040C29C35EA100151275 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68D5040F29C35EA100151275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		68D5041129C35EA100151275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68D5041829C35F3600151275 /* プラスアイコン２ 茶.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコン２ 茶.png"; sourceTree = "<group>"; };
+		68D5041929C35F3600151275 /* プラスアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコン.png"; sourceTree = "<group>"; };
+		68D5041A29C35F3600151275 /* cl_地図アイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cl_地図アイコン.png"; sourceTree = "<group>"; };
+		68D5041B29C35F3600151275 /* リストアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "リストアイコン.png"; sourceTree = "<group>"; };
+		68D5041C29C35F3600151275 /* 王子神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "王子神社.jpeg"; sourceTree = "<group>"; };
+		68D5041D29C35F3600151275 /* IMG_5870.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5870.jpg; sourceTree = "<group>"; };
+		68D5041E29C35F3600151275 /* 画像アップロード.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "画像アップロード.png"; sourceTree = "<group>"; };
+		68D5041F29C35F3600151275 /* ホームアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ホームアイコン.png"; sourceTree = "<group>"; };
+		68D5042029C35F3600151275 /* 二宮神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "二宮神社.jpeg"; sourceTree = "<group>"; };
+		68D5042129C35F3600151275 /* プラスアイコン２.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコン２.png"; sourceTree = "<group>"; };
+		68D5042229C35F3600151275 /* 神社サンプル.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "神社サンプル.jpeg"; sourceTree = "<group>"; };
+		68D5042329C35F3600151275 /* ざらざら.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ざらざら.jpeg"; sourceTree = "<group>"; };
+		68D5042429C35F3600151275 /* clホームアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clホームアイコン.png"; sourceTree = "<group>"; };
+		68D5042529C35F3600151275 /* 赤坂氷川神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "赤坂氷川神社.jpeg"; sourceTree = "<group>"; };
+		68D5042629C35F3600151275 /* LA素材.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LA素材.ai"; sourceTree = "<group>"; };
+		68D5042729C35F3600151275 /* 櫻井神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "櫻井神社.jpeg"; sourceTree = "<group>"; };
+		68D5042829C35F3600151275 /* top背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top背景.png"; sourceTree = "<group>"; };
+		68D5042929C35F3600151275 /* cl_リストアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cl_リストアイコン.png"; sourceTree = "<group>"; };
+		68D5042A29C35F3600151275 /* ロゴ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ロゴ.png"; sourceTree = "<group>"; };
+		68D5042B29C35F3600151275 /* 背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景.png"; sourceTree = "<group>"; };
+		68D5042C29C35F3600151275 /* l_プラスアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "l_プラスアイコン.png"; sourceTree = "<group>"; };
+		68D5042D29C35F3600151275 /* 地図アイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地図アイコン.png"; sourceTree = "<group>"; };
+		68D5042E29C35F3600151275 /* 稲荷神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "稲荷神社.jpeg"; sourceTree = "<group>"; };
+		68D5042F29C35F3600151275 /* 赤城神社.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "赤城神社.jpeg"; sourceTree = "<group>"; };
+		68D5043029C35F3600151275 /* pngwing.com.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pngwing.com.png; sourceTree = "<group>"; };
+		68D5044A29C3651800151275 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		68D5044D29C3682000151275 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		68D5045429C37C3A00151275 /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
+		68D5045629C37CE700151275 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		68D5045829C3811100151275 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		68D5045A29C3827900151275 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68D503FD29C35EA000151275 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D5045329C3770E00151275 /* RealmSwift in Frameworks */,
+				68D5045129C3770E00151275 /* Realm in Frameworks */,
+				68D5044E29C3682000151275 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68D503F729C35EA000151275 = {
+			isa = PBXGroup;
+			children = (
+				68D5040229C35EA000151275 /* GoshuinApp */,
+				68D5040129C35EA000151275 /* Products */,
+				68D5044C29C3682000151275 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		68D5040129C35EA000151275 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68D5040029C35EA000151275 /* GoshuinApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68D5040229C35EA000151275 /* GoshuinApp */ = {
+			isa = PBXGroup;
+			children = (
+				68D5040329C35EA000151275 /* AppDelegate.swift */,
+				68D5040529C35EA000151275 /* SceneDelegate.swift */,
+				68D5040729C35EA000151275 /* HomeViewController.swift */,
+				68D5044A29C3651800151275 /* MapViewController.swift */,
+				68D5045429C37C3A00151275 /* RealmData.swift */,
+				68D5045629C37CE700151275 /* AddViewController.swift */,
+				68D5045829C3811100151275 /* ListTableViewController.swift */,
+				68D5045A29C3827900151275 /* EditViewController.swift */,
+				68D5040929C35EA000151275 /* Main.storyboard */,
+				68D5040C29C35EA100151275 /* Assets.xcassets */,
+				68D5040E29C35EA100151275 /* LaunchScreen.storyboard */,
+				68D5041129C35EA100151275 /* Info.plist */,
+				68D5041729C35F3600151275 /* LA_オリジナル_素材 */,
+			);
+			path = GoshuinApp;
+			sourceTree = "<group>";
+		};
+		68D5041729C35F3600151275 /* LA_オリジナル_素材 */ = {
+			isa = PBXGroup;
+			children = (
+				68D5041829C35F3600151275 /* プラスアイコン２ 茶.png */,
+				68D5041929C35F3600151275 /* プラスアイコン.png */,
+				68D5041A29C35F3600151275 /* cl_地図アイコン.png */,
+				68D5041B29C35F3600151275 /* リストアイコン.png */,
+				68D5041C29C35F3600151275 /* 王子神社.jpeg */,
+				68D5041D29C35F3600151275 /* IMG_5870.jpg */,
+				68D5041E29C35F3600151275 /* 画像アップロード.png */,
+				68D5041F29C35F3600151275 /* ホームアイコン.png */,
+				68D5042029C35F3600151275 /* 二宮神社.jpeg */,
+				68D5042129C35F3600151275 /* プラスアイコン２.png */,
+				68D5042229C35F3600151275 /* 神社サンプル.jpeg */,
+				68D5042329C35F3600151275 /* ざらざら.jpeg */,
+				68D5042429C35F3600151275 /* clホームアイコン.png */,
+				68D5042529C35F3600151275 /* 赤坂氷川神社.jpeg */,
+				68D5042629C35F3600151275 /* LA素材.ai */,
+				68D5042729C35F3600151275 /* 櫻井神社.jpeg */,
+				68D5042829C35F3600151275 /* top背景.png */,
+				68D5042929C35F3600151275 /* cl_リストアイコン.png */,
+				68D5042A29C35F3600151275 /* ロゴ.png */,
+				68D5042B29C35F3600151275 /* 背景.png */,
+				68D5042C29C35F3600151275 /* l_プラスアイコン.png */,
+				68D5042D29C35F3600151275 /* 地図アイコン.png */,
+				68D5042E29C35F3600151275 /* 稲荷神社.jpeg */,
+				68D5042F29C35F3600151275 /* 赤城神社.jpeg */,
+				68D5043029C35F3600151275 /* pngwing.com.png */,
+			);
+			path = "LA_オリジナル_素材";
+			sourceTree = "<group>";
+		};
+		68D5044C29C3682000151275 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68D5044D29C3682000151275 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68D503FF29C35EA000151275 /* GoshuinApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68D5041429C35EA100151275 /* Build configuration list for PBXNativeTarget "GoshuinApp" */;
+			buildPhases = (
+				68D503FC29C35EA000151275 /* Sources */,
+				68D503FD29C35EA000151275 /* Frameworks */,
+				68D503FE29C35EA000151275 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoshuinApp;
+			packageProductDependencies = (
+				68D5045029C3770E00151275 /* Realm */,
+				68D5045229C3770E00151275 /* RealmSwift */,
+			);
+			productName = GoshuinApp;
+			productReference = 68D5040029C35EA000151275 /* GoshuinApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68D503F829C35EA000151275 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					68D503FF29C35EA000151275 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 68D503FB29C35EA000151275 /* Build configuration list for PBXProject "GoshuinApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68D503F729C35EA000151275;
+			packageReferences = (
+				68D5044F29C3770E00151275 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			productRefGroup = 68D5040129C35EA000151275 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68D503FF29C35EA000151275 /* GoshuinApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68D503FE29C35EA000151275 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D5043F29C35F3700151275 /* LA素材.ai in Resources */,
+				68D5041029C35EA100151275 /* LaunchScreen.storyboard in Resources */,
+				68D5044129C35F3700151275 /* top背景.png in Resources */,
+				68D5043729C35F3700151275 /* 画像アップロード.png in Resources */,
+				68D5043D29C35F3700151275 /* clホームアイコン.png in Resources */,
+				68D5044229C35F3700151275 /* cl_リストアイコン.png in Resources */,
+				68D5043B29C35F3700151275 /* 神社サンプル.jpeg in Resources */,
+				68D5043329C35F3700151275 /* cl_地図アイコン.png in Resources */,
+				68D5044429C35F3700151275 /* 背景.png in Resources */,
+				68D5044829C35F3700151275 /* 赤城神社.jpeg in Resources */,
+				68D5044629C35F3700151275 /* 地図アイコン.png in Resources */,
+				68D5044729C35F3700151275 /* 稲荷神社.jpeg in Resources */,
+				68D5040D29C35EA100151275 /* Assets.xcassets in Resources */,
+				68D5044329C35F3700151275 /* ロゴ.png in Resources */,
+				68D5043829C35F3700151275 /* ホームアイコン.png in Resources */,
+				68D5040B29C35EA000151275 /* Main.storyboard in Resources */,
+				68D5043529C35F3700151275 /* 王子神社.jpeg in Resources */,
+				68D5043129C35F3700151275 /* プラスアイコン２ 茶.png in Resources */,
+				68D5043629C35F3700151275 /* IMG_5870.jpg in Resources */,
+				68D5043C29C35F3700151275 /* ざらざら.jpeg in Resources */,
+				68D5044529C35F3700151275 /* l_プラスアイコン.png in Resources */,
+				68D5044929C35F3700151275 /* pngwing.com.png in Resources */,
+				68D5043A29C35F3700151275 /* プラスアイコン２.png in Resources */,
+				68D5043229C35F3700151275 /* プラスアイコン.png in Resources */,
+				68D5043429C35F3700151275 /* リストアイコン.png in Resources */,
+				68D5044029C35F3700151275 /* 櫻井神社.jpeg in Resources */,
+				68D5043E29C35F3700151275 /* 赤坂氷川神社.jpeg in Resources */,
+				68D5043929C35F3700151275 /* 二宮神社.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68D503FC29C35EA000151275 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D5045B29C3827900151275 /* EditViewController.swift in Sources */,
+				68D5040829C35EA000151275 /* HomeViewController.swift in Sources */,
+				68D5040429C35EA000151275 /* AppDelegate.swift in Sources */,
+				68D5045729C37CE700151275 /* AddViewController.swift in Sources */,
+				68D5045529C37C3A00151275 /* RealmData.swift in Sources */,
+				68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */,
+				68D5044B29C3651800151275 /* MapViewController.swift in Sources */,
+				68D5045929C3811100151275 /* ListTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		68D5040929C35EA000151275 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68D5040A29C35EA000151275 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68D5040E29C35EA100151275 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68D5040F29C35EA100151275 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68D5041229C35EA100151275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		68D5041329C35EA100151275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68D5041529C35EA100151275 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F63FQN4T2W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoshuinApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.Kimura.Sheep.GoshuinApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		68D5041629C35EA100151275 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F63FQN4T2W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GoshuinApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.Kimura.Sheep.GoshuinApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68D503FB29C35EA000151275 /* Build configuration list for PBXProject "GoshuinApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D5041229C35EA100151275 /* Debug */,
+				68D5041329C35EA100151275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68D5041429C35EA100151275 /* Build configuration list for PBXNativeTarget "GoshuinApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D5041529C35EA100151275 /* Debug */,
+				68D5041629C35EA100151275 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68D5044F29C3770E00151275 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68D5045029C3770E00151275 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68D5044F29C3770E00151275 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		68D5045229C3770E00151275 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68D5044F29C3770E00151275 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 68D503F829C35EA000151275 /* Project object */;
+}
