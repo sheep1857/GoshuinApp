@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var goshuinTableView: UITableView!
     
-    // RealmData型の変数を用意（まだ空っぽの配列）
+    // RealmData型の変数を用意（まだ空の配列）
     var goshuinList: Results<RealmData>!
 
     override func viewDidLoad() {
@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // TableViewの教材参照
         self.goshuinTableView.delegate = self
         self.goshuinTableView.dataSource = self
+        goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // TableViewの教材参照
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
         
         // 取得したリストのindexPath.row番目をeachData変数に代入
         let eachData = goshuinList[indexPath.row]

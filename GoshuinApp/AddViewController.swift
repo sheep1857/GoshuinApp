@@ -46,6 +46,8 @@ class AddViewController: UIViewController {
         // Realmの中身を確認するためのprint文
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
+        self.dismiss(animated: true)
+        
     } // これで保存（CRUDのC）はおしまい！
     
 }

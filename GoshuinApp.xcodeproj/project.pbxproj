@@ -46,6 +46,8 @@
 		68D5045729C37CE700151275 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045629C37CE700151275 /* AddViewController.swift */; };
 		68D5045929C3811100151275 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045829C3811100151275 /* ListTableViewController.swift */; };
 		68D5045B29C3827900151275 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045A29C3827900151275 /* EditViewController.swift */; };
+		68D5045E29C47EBC00151275 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */; };
+		68D5045F29C47EBC00151275 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		68D5045629C37CE700151275 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		68D5045829C3811100151275 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		68D5045A29C3827900151275 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				68D5045629C37CE700151275 /* AddViewController.swift */,
 				68D5045829C3811100151275 /* ListTableViewController.swift */,
 				68D5045A29C3827900151275 /* EditViewController.swift */,
+				68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */,
+				68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */,
 				68D5040929C35EA000151275 /* Main.storyboard */,
 				68D5040C29C35EA100151275 /* Assets.xcassets */,
 				68D5040E29C35EA100151275 /* LaunchScreen.storyboard */,
@@ -254,6 +260,7 @@
 				68D5044229C35F3700151275 /* cl_リストアイコン.png in Resources */,
 				68D5043B29C35F3700151275 /* 神社サンプル.jpeg in Resources */,
 				68D5043329C35F3700151275 /* cl_地図アイコン.png in Resources */,
+				68D5045F29C47EBC00151275 /* InfoTableViewCell.xib in Resources */,
 				68D5044429C35F3700151275 /* 背景.png in Resources */,
 				68D5044829C35F3700151275 /* 赤城神社.jpeg in Resources */,
 				68D5044629C35F3700151275 /* 地図アイコン.png in Resources */,
@@ -287,6 +294,7 @@
 				68D5045B29C3827900151275 /* EditViewController.swift in Sources */,
 				68D5040829C35EA000151275 /* HomeViewController.swift in Sources */,
 				68D5040429C35EA000151275 /* AppDelegate.swift in Sources */,
+				68D5045E29C47EBC00151275 /* InfoTableViewCell.swift in Sources */,
 				68D5045729C37CE700151275 /* AddViewController.swift in Sources */,
 				68D5045529C37C3A00151275 /* RealmData.swift in Sources */,
 				68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */,
@@ -438,7 +446,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F63FQN4T2W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoshuinApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,7 +474,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = F63FQN4T2W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GoshuinApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

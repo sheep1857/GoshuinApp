@@ -16,7 +16,8 @@ class EditViewController: UIViewController {
     // RealmData型の変数を用意（まだ空っぽの配列）
     var goshuinList: Results<RealmData>!
     
-    @IBOutlet var editTextField: UITextField!
+    @IBOutlet var editnameTextField: UITextField!
+    @IBOutlet var editadressTextField: UITextField!
     @IBOutlet var editTextView: UITextView!
     @IBOutlet var updateButton: UIBarButtonItem!
 
@@ -38,8 +39,8 @@ class EditViewController: UIViewController {
         let editData = goshuinList[passedNumber]
         
         // TextFieldとTextViewに値を代入
-        editTextField.text = editData.name
-        editTextField.text = editData.adress
+        editnameTextField.text = editData.name
+        editadressTextField.text = editData.adress
         editTextView.text = editData.memo
         
         // Realmの中身を確認するためのprint文
@@ -55,8 +56,8 @@ class EditViewController: UIViewController {
         
         // 更新のコード(データベースに上書き)
         try! realm.write {
-            self.goshuinList[passedNumber].name = editTextField.text!
-            self.goshuinList[passedNumber].adress = editTextField.text!
+            self.goshuinList[passedNumber].name = editnameTextField.text!
+            self.goshuinList[passedNumber].adress = editadressTextField.text!
             self.goshuinList[passedNumber].memo = editTextView.text!
         }
         
