@@ -6,18 +6,25 @@
 //
 
 import UIKit
+import Foundation
 import RealmSwift
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var adressTextField: UITextField!
+    @IBOutlet var ImageView: UIImageView!
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var saveButton: UIBarButtonItem!
+    
+    let realm = try! Realm()
+    
+    var goshuinList: [RealmData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pictDisp()
         
         
         //キーボードをしまう
@@ -34,6 +41,21 @@ class AddViewController: UIViewController, UITextFieldDelegate {
          
     }
     
+    func pictDisp(){
+            
+        let pictData = realm.objects(goshuinList.self)
+        //URL型にキャスト
+        let pictName = pictData[0].topPictName
+        let pictURL = documentDirectoryFileURL.appendingPathComponent(pictName)
+        //パス型に変換
+        let filePath = pictURL.path
+        ImageView.image = UIImage(contentsOfFile: filePath)
+
+        }
+    
+    
+    
+    
     
     @IBAction func save(){
         
@@ -46,6 +68,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         // インスタンス化したオブジェクトに値をセット
         realmData.name = nameTextField.text!
         realmData.adress = adressTextField.text!
+        realmData.image = ImageView.image!
         realmData.memo = memoTextView.text!
         
         // 保存のコード(データベースに書き込み)
@@ -60,6 +83,6 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         
         self.dismiss(animated: true)
         
-    } // これで保存（CRUDのC）はおしまい！
+    }
     
 }

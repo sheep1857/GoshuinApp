@@ -109,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="820.61068702290072" y="3.5211267605633805"/>
         </scene>
-        <!--Add View Controller-->
+        <!--ページを追加する-->
         <scene sceneID="FDE-EQ-1ap">
             <objects>
                 <viewController id="bbz-0f-gEL" customClass="AddViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,22 +118,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Q0-FY-SKg">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBn-UE-Dqm">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="ページを追加する" id="bbq-jb-7RK">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DuN-g0-vtp">
-                                            <connections>
-                                                <action selector="save" destination="bbz-0f-gEL" id="f7n-Lz-vYG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="神社の名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-F3-akz">
                                 <rect key="frame" x="29" y="173" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,7 +129,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-xG-EAj">
-                                <rect key="frame" x="29" y="314" width="35" height="21"/>
+                                <rect key="frame" x="29" y="527" width="35" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -155,13 +142,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2e0-Pr-AZQ">
-                                <rect key="frame" x="29" y="351" width="335" height="34"/>
+                                <rect key="frame" x="29" y="564" width="335" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-xy-r3z">
-                                <rect key="frame" x="29" y="492" width="335" height="120"/>
+                                <rect key="frame" x="29" y="660" width="335" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -169,29 +156,37 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メモ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-Kf-SEq">
-                                <rect key="frame" x="29" y="455" width="35" height="21"/>
+                                <rect key="frame" x="29" y="623" width="35" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-Pb-8Vw">
+                                <rect key="frame" x="76" y="324" width="240" height="180"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85q-JV-Hj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oZp-PN-hEk">
-                        <barButtonItem key="backBarButtonItem" title=" " id="fY5-gn-pWE"/>
+                    <navigationItem key="navigationItem" title="ページを追加する" id="pFm-Ps-qGl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9w6-ng-NWu">
+                            <connections>
+                                <action selector="save" destination="bbz-0f-gEL" id="DQK-AO-9Ez"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ImageView" destination="Tmp-Pb-8Vw" id="okd-Nq-OGY"/>
                         <outlet property="adressTextField" destination="2e0-Pr-AZQ" id="Sxg-au-LCu"/>
                         <outlet property="memoTextView" destination="Q7h-xy-r3z" id="qdv-M7-KbH"/>
                         <outlet property="nameTextField" destination="wj3-Rh-7Ii" id="7KI-02-cyt"/>
-                        <outlet property="saveButton" destination="DuN-g0-vtp" id="V7T-IV-MNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwH-6t-0Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="765"/>
+            <point key="canvasLocation" x="1954.9618320610687" y="764.78873239436621"/>
         </scene>
         <!--リストから探す-->
         <scene sceneID="y5x-Bm-AAc">
@@ -213,9 +208,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Q4T-eJ-hvM" kind="show" id="5Y3-oQ-HFl"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -226,12 +218,13 @@
                     <navigationItem key="navigationItem" title="リストから探す" id="n7H-Ug-doC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JDP-oU-UqF">
                             <connections>
-                                <segue destination="bbz-0f-gEL" kind="show" identifier="toAddView" id="RXB-CQ-Kw1"/>
+                                <segue destination="bbz-0f-gEL" kind="push" id="fvr-rw-q3R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="goshuinTableView" destination="Xrh-PS-K1t" id="nbu-qm-mtD"/>
+                        <segue destination="1vs-Zf-0gB" kind="push" id="aQ5-fk-Y0D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K63-W4-8hg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -252,9 +245,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clh-cC-flp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="1561"/>
+            <point key="canvasLocation" x="195" y="1496"/>
         </scene>
-        <!--Edit View Controller-->
+        <!--編集する-->
         <scene sceneID="9IB-Ik-nla">
             <objects>
                 <viewController id="1vs-Zf-0gB" customClass="EditViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -263,22 +256,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="背景.png" translatesAutoresizingMaskIntoConstraints="NO" id="hb6-Mt-Ppr">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ttc-Xs-vjo">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="ページを編集する" id="ybe-9D-pWh">
-                                        <barButtonItem key="rightBarButtonItem" title="更新" id="VcO-uh-Avy">
-                                            <connections>
-                                                <action selector="update" destination="1vs-Zf-0gB" id="TgG-xr-85j"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="神社の名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stx-KO-tI4">
                                 <rect key="frame" x="29" y="181" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -324,16 +304,22 @@
                         <viewLayoutGuide key="safeArea" id="TPH-aY-ll2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="編集する" id="Zp2-7l-zPG">
+                        <barButtonItem key="rightBarButtonItem" title="更新" id="rWN-cp-1Le">
+                            <connections>
+                                <action selector="update" destination="1vs-Zf-0gB" id="YaI-cT-ld6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="editTextView" destination="zOM-iF-H63" id="tty-qH-NtU"/>
                         <outlet property="editadressTextField" destination="04A-mx-2o4" id="thQ-Cm-zqN"/>
                         <outlet property="editnameTextField" destination="LFM-Op-c6V" id="ghj-qF-m9o"/>
-                        <outlet property="updateButton" destination="VcO-uh-Avy" id="0YQ-rf-9dP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWf-g9-tCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="1394"/>
+            <point key="canvasLocation" x="1154.9618320610687" y="1562.6760563380283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CP1-W7-Gf3">
@@ -355,7 +341,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RXB-CQ-Kw1"/>
+        <segue reference="fvr-rw-q3R"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="top背景.png" width="1143" height="2454"/>

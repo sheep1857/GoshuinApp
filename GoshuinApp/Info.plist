@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>カメラロールを使用する許可を求める文言</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>許可を求める文言</string>
+	<string>位置情報使用許可を求める文言</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>許可を求める文言</string>
+	<string>位置情報使用許可を求める文言</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

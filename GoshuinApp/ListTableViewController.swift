@@ -17,6 +17,8 @@ class ListViewController: UIViewController, UITableViewDataSource{
     
     // RealmData型の変数を用意（まだ空の配列）
     var goshuinList: [RealmData] = []
+    
+    var editCategory: RealmData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,12 +90,25 @@ class ListViewController: UIViewController, UITableViewDataSource{
    
 }
 
-//削除機能
+//スワイプ
 extension ListViewController: UITableViewDelegate {
+  // スワイプした時に表示するアクションの定義
+  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
        
+        // 編集処理
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            
+            self.editCategory = self.goshuinList[indexPath.row]
+            self.performSegue(withIdentifier: "toEdit", sender: nil)
+            
+          print("Editがタップされました")
+
+        completionHandler(true)
+        }
+        
+        //削除処理
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [self] (action, view, completionHandler) in
             
             try! self.realm.write {
