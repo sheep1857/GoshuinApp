@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 import RealmSwift
 
-class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
+class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var adressTextField: UITextField!
@@ -41,6 +41,8 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
          
     }
     
+    @IBAction
+    
     func pictDisp(){
             
         let pictData = realm.objects(goshuinList.self)
@@ -53,7 +55,28 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
 
         }
     
+    @IBAction func selectImage() {
+        //UIImagePickerControllerのインスタンスを作成
+        let imagePickerController: UIImagePickerController = UIImagePickerController()
+        
+        imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        
+        //フォトライブラリを呼び出す
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        //imageに画像を設定する
+        let image = info[.originalImage] as? UIImage
+        
+        ImageView.image = image
+        
+        //フォトライブラリを閉じる
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     
