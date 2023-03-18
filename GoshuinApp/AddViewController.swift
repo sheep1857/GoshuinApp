@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var adressTextField: UITextField!
@@ -18,8 +18,20 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        //キーボードをしまう
+        nameTextField.delegate = self
+        adressTextField.delegate = self
+        
         // Realmの中身を確認するためのprint文
         print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+         
     }
     
     

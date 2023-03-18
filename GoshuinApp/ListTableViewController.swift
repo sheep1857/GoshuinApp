@@ -8,9 +8,12 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ListViewController: UIViewController, UITableViewDataSource{
     
     @IBOutlet var goshuinTableView: UITableView!
+    
+    // Realm使う宣言
+    let realm = try! Realm()
     
     // RealmData型の変数を用意（まだ空の配列）
     var goshuinList: Results<RealmData>!
@@ -26,8 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         
-        // Realm使う宣言
-        let realm = try! Realm()
+        
         
         // Realmから受け取るデータをList変数（配列）に突っ込む
         self.goshuinList = realm.objects(RealmData.self)
@@ -67,6 +69,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditVC" {
@@ -78,8 +82,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destination?.passedNumber = indexPath.row
         }
     }
-    
-    
-    
    
+   
+}
+
+//削除機能
+extension ListViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+       
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [self] (action, view, completionHandler) in
+            
+            try! self.realm.write {
+                let item = goshuinList.remove(at: indexPath.row)
+                realm.delete(item)
+            }
+            tableView.reloadData()
+            print("Deleteがタップされました")
+            
+            completionHandler(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
 }
