@@ -48,6 +48,7 @@
 		68D5045B29C3827900151275 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045A29C3827900151275 /* EditViewController.swift */; };
 		68D5045E29C47EBC00151275 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */; };
 		68D5045F29C47EBC00151275 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */; };
+		68D5046129C5A0CD00151275 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5046029C5A0CD00151275 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		68D5045A29C3827900151275 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		68D5046029C5A0CD00151275 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				68D5045829C3811100151275 /* ListTableViewController.swift */,
 				68D5045A29C3827900151275 /* EditViewController.swift */,
 				68D5045C29C47EBC00151275 /* InfoTableViewCell.swift */,
+				68D5046029C5A0CD00151275 /* InformationViewController.swift */,
 				68D5045D29C47EBC00151275 /* InfoTableViewCell.xib */,
 				68D5040929C35EA000151275 /* Main.storyboard */,
 				68D5040C29C35EA100151275 /* Assets.xcassets */,
@@ -300,6 +303,7 @@
 				68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */,
 				68D5044B29C3651800151275 /* MapViewController.swift in Sources */,
 				68D5045929C3811100151275 /* ListTableViewController.swift in Sources */,
+				68D5046129C5A0CD00151275 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

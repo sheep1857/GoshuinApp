@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwH-6t-0Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5267175572519" y="705.63380281690149"/>
+            <point key="canvasLocation" x="1956" y="765"/>
         </scene>
         <!--リストから探す-->
         <scene sceneID="y5x-Bm-AAc">
@@ -213,6 +213,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Q4T-eJ-hvM" kind="show" id="5Y3-oQ-HFl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -234,6 +237,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K63-W4-8hg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018" y="765"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BYl-Hz-4S2">
+            <objects>
+                <viewController id="Q4T-eJ-hvM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ye6-uW-fSs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zE0-ir-INI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oog-YJ-DPs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clh-cC-flp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="1561"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="9IB-Ik-nla">

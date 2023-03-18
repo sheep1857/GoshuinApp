@@ -54,6 +54,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             break
         }
     }
+    
+    //ジオコーディング
+    func reverseGeoCording(lat: Double,long: Double, completion: @escaping (String) -> Void ) {
+        
+        // 住所を取得したい位置情報を宣言
+        let location = CLLocation(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
+        // 位置情報から住所を取得
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first, error == nil else { return }
+            // 市区町村より下の階層が出力
+            print(placemark.name!)
+            // 都道府県
+            print(placemark.administrativeArea!)
+            // なんとか郡とかがあれば(ない場合もあるのでnull回避)
+            print(placemark.subAdministrativeArea ?? "")
+            // 市区町村
+            print(placemark.locality!)
+            
+            let address = placemark.administrativeArea! + placemark.locality! + placemark.name!
+            
+            // クロージャの実行
+            completion(address)
+        }
+    }
 }
     
     

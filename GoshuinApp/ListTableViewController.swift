@@ -16,7 +16,7 @@ class ListViewController: UIViewController, UITableViewDataSource{
     let realm = try! Realm()
     
     // RealmData型の変数を用意（まだ空の配列）
-    var goshuinList: Results<RealmData>!
+    var goshuinList: [RealmData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,9 @@ class ListViewController: UIViewController, UITableViewDataSource{
         
         
         // Realmから受け取るデータをList変数（配列）に突っ込む
-        self.goshuinList = realm.objects(RealmData.self)
+        for object in realm.objects(RealmData.self) {
+            goshuinList.append(object)
+        }
         
         // tableViewを更新
         goshuinTableView.reloadData()
