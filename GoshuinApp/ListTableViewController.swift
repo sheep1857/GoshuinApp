@@ -32,9 +32,9 @@ class ListViewController: UIViewController, UITableViewDataSource{
         self.goshuinTableView.dataSource = self
         goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         
-        tableData = realm.objects(goshuinList.self)
+        goshuinList = realm.objects(goshuinList.self)
         //URL型にキャスト
-        let fileURL = URL(string: tableData[0].imageURL)
+        let fileURL = URL(string: goshuinList[0].imageURL)
         //パス型に変換
         let filePath = fileURL?.path
         showImageView.image = UIImage(contentsOfFile: filePath!)
@@ -79,10 +79,11 @@ class ListViewController: UIViewController, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // 画面遷移先を指定
-        performSegue(withIdentifier: "toEditVC", sender: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
+        // セルの選択を解除
+                tableView.deselectRow(at: indexPath, animated: true)
+         
+                // 別の画面に遷移
+                performSegue(withIdentifier: "InformationViewController", sender: nil)
     }
     
 
