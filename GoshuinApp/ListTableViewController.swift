@@ -11,6 +11,8 @@ import RealmSwift
 class ListViewController: UIViewController, UITableViewDataSource{
     
     @IBOutlet var goshuinTableView: UITableView!
+    @IBOutlet weak var showImageView: UIImageView!
+
     
     // Realm使う宣言
     let realm = try! Realm()
@@ -19,6 +21,8 @@ class ListViewController: UIViewController, UITableViewDataSource{
     var goshuinList: [RealmData] = []
     
     var editCategory: RealmData!
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,13 @@ class ListViewController: UIViewController, UITableViewDataSource{
         self.goshuinTableView.delegate = self
         self.goshuinTableView.dataSource = self
         goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
+        
+        tableData = realm.objects(goshuinList.self)
+        //URL型にキャスト
+        let fileURL = URL(string: tableData[0].imageURL)
+        //パス型に変換
+        let filePath = fileURL?.path
+        showImageView.image = UIImage(contentsOfFile: filePath!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

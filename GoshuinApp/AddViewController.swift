@@ -17,14 +17,21 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var saveButton: UIBarButtonItem!
     
+    
     let realm = try! Realm()
     
     var goshuinList: [RealmData] = []
     
+    // ドキュメントディレクトリの「ファイルURL」（URL型）定義
+        var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+
+        // ドキュメントディレクトリの「パス」（String型）定義
+        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+       
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pictDisp()
         
         
         //キーボードをしまう
@@ -41,19 +48,46 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
          
     }
     
-    @IBAction
-    
-    func pictDisp(){
+    @IBAction func addImage(_ sender: UITextField) {
+            //Realmのテーブルをインスタンス化
+            let table = goshuinList()
+            do{
+                try table.imageURL = directory.documentDirectoryFileURL.absoluteString
+            }catch{
+                print("画像の保存に失敗しました")
+            }
+            try! realm.write{realm.add(table)}
+        
             
-        let pictData = realm.objects(goshuinList.self)
-        //URL型にキャスト
-        let pictName = pictData[0].topPictName
-        let pictURL = documentDirectoryFileURL.appendingPathComponent(pictName)
-        //パス型に変換
-        let filePath = pictURL.path
-        ImageView.image = UIImage(contentsOfFile: filePath)
-
         }
+    
+    //保存するためのパスを作成する
+    func createLocalDataFile() {
+        // 作成するテキストファイルの名前
+        let fileName = "\(NSUUID().uuidString).png"
+
+        // DocumentディレクトリのfileURLを取得
+        if documentDirectoryFileURL != nil {
+            // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
+            let path = documentDirectoryFileURL.appendingPathComponent(fileName)
+            documentDirectoryFileURL = path
+        }
+    }
+    
+    //画像を保存する関数の部分
+    func saveImage() {
+        createLocalDataFile()
+        //pngで保存する場合
+        let pngImageData = ImageView.image?.pngData()
+        do {
+            try pngImageData!.write(to: documentDirectoryFileURL)
+        } catch {
+            //エラー処理
+            print("エラー")
+        }
+    }
+    
+   
     
     @IBAction func selectImage() {
         //UIImagePickerControllerのインスタンスを作成
