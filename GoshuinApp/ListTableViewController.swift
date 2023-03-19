@@ -19,7 +19,7 @@ class ListViewController: UIViewController, UITableViewDataSource{
     
     // RealmData型の変数を用意（まだ空の配列）
     var goshuinList: [RealmData] = []
-    
+    var goshuinListData: Results<RealmData>!
     var editCategory: RealmData!
     
    
@@ -32,12 +32,12 @@ class ListViewController: UIViewController, UITableViewDataSource{
         self.goshuinTableView.dataSource = self
         goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         
-        goshuinList = realm.objects(goshuinList.self)
+        goshuinListData = realm.objects(RealmData.self)
         //URL型にキャスト
-        let fileURL = URL(string: goshuinList[0].imageURL)
+        //let fileURL = URL(string: goshuinList[0].imageURL)
         //パス型に変換
-        let filePath = fileURL?.path
-        showImageView.image = UIImage(contentsOfFile: filePath!)
+        //let filePath = fileURL?.path
+        //showImageView.image = UIImage(contentsOfFile: filePath!)
     }
     
     override func viewWillAppear(_ animated: Bool) {

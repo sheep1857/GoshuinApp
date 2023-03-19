@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="-121" y="4"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="9Ki-lJ-jgP">
@@ -85,7 +85,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="プラスアイコン２.png"/>
                                 <connections>
-                                    <segue destination="bbz-0f-gEL" kind="presentation" id="CFF-26-rsD"/>
+                                    <segue destination="bbz-0f-gEL" kind="push" id="qHH-BP-acu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="マップから探す" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-dx-Svk">
@@ -112,7 +112,7 @@
         <!--ページを追加する-->
         <scene sceneID="FDE-EQ-1ap">
             <objects>
-                <viewController id="bbz-0f-gEL" customClass="AddViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="bbz-0f-gEL" customClass="AddViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qWF-cE-4zj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
                     <navigationItem key="navigationItem" title="リストから探す" id="n7H-Ug-doC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="JDP-oU-UqF">
                             <connections>
-                                <segue destination="bbz-0f-gEL" kind="push" id="fvr-rw-q3R"/>
+                                <segue destination="bbz-0f-gEL" kind="push" id="Vym-oG-6gz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -292,6 +292,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oog-YJ-DPs"/>
+                    <connections>
+                        <outlet property="adressTextLabel" destination="ivQ-Po-SkB" id="IGs-Yg-MNt"/>
+                        <outlet property="memoTextField" destination="Nh4-HA-u9N" id="1mw-45-m8j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clh-cC-flp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -387,11 +391,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2U-hI-Dxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="765"/>
+            <point key="canvasLocation" x="-121" y="765"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fvr-rw-q3R"/>
+        <segue reference="qHH-BP-acu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="top背景.png" width="1143" height="2454"/>

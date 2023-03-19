@@ -22,6 +22,7 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
     var goshuinList: [RealmData] = []
     
+    
     // ドキュメントディレクトリの「ファイルURL」（URL型）定義
         var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 
@@ -50,13 +51,13 @@ class AddViewController: UIViewController, UITextFieldDelegate, UIImagePickerCon
     
     @IBAction func addImage(_ sender: UITextField) {
             //Realmのテーブルをインスタンス化
-            let table = goshuinList()
+            let goshuinList = RealmData()
             do{
-                try table.imageURL = directory.documentDirectoryFileURL.absoluteString
+                try goshuinList.imageURL = directory.documentDirectoryFileURL.absoluteString
             }catch{
                 print("画像の保存に失敗しました")
             }
-            try! realm.write{realm.add(table)}
+            try! realm.write{realm.add(goshuinList)}
         
             
         }
