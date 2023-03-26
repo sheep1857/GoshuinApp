@@ -6,13 +6,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 class InformationViewController: UIViewController {
     
     @IBOutlet var nameTextLabel: UILabel!
-    @IBOutlet var adressTextLabel: UILabel!
-    @IBOutlet var ImageView: UIImageView!
+    @IBOutlet var addressTextLabel: UILabel!
+    @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var memoTextField: UILabel!
+    
+    let realm = try! Realm()
+    var shrines: Results<RealmData>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +24,10 @@ class InformationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func goInfo(name: String, adress: String, image: UIImage, memo: String) {
+    func goInfo(name: String, adress: String, memo: String) {
         nameTextLabel.text = name
-        adressTextLabel.text = adress
-        ImageView.image = image
+        addressTextLabel.text = adress
+        //photoImageView.image = image
         memoTextField.text = memo
         
     }

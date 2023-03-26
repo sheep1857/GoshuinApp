@@ -75,19 +75,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0p5-fk-uKk">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="791"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-o5-tHD">
-                                <rect key="frame" x="307" y="60" width="83" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button" image="プラスアイコン２.png"/>
-                                <connections>
-                                    <segue destination="bbz-0f-gEL" kind="push" id="qHH-BP-acu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="マップから探す" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-dx-Svk">
                                 <rect key="frame" x="23" y="72" width="227" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -96,6 +87,12 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-o5-tHD">
+                                <rect key="frame" x="307" y="60" width="83" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="プラスアイコン２.png"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MeC-nQ-5Bb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,26 +159,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-Pb-8Vw">
-                                <rect key="frame" x="76" y="324" width="240" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-Lo-05G">
-                                <rect key="frame" x="29" y="240" width="95" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button" image="画像アップロード.png"/>
-                                <connections>
-                                    <action selector="selectImage" destination="bbz-0f-gEL" eventType="touchUpInside" id="5FE-4s-GMX"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="画像をアップロード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psF-jH-oMb">
-                                <rect key="frame" x="32" y="304" width="92" height="12"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85q-JV-Hj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,7 +171,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ImageView" destination="Tmp-Pb-8Vw" id="okd-Nq-OGY"/>
                         <outlet property="adressTextField" destination="2e0-Pr-AZQ" id="Sxg-au-LCu"/>
                         <outlet property="memoTextView" destination="Q7h-xy-r3z" id="qdv-M7-KbH"/>
                         <outlet property="nameTextField" destination="wj3-Rh-7Ii" id="7KI-02-cyt"/>
@@ -394,14 +370,10 @@
             <point key="canvasLocation" x="-121" y="765"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qHH-BP-acu"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="top背景.png" width="1143" height="2454"/>
         <image name="プラスアイコン２.png" width="810" height="619"/>
         <image name="ロゴ.png" width="892" height="540"/>
-        <image name="画像アップロード.png" width="810" height="630"/>
         <image name="背景.png" width="1143" height="2454"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

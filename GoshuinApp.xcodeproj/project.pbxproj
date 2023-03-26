@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		687732F629D062E400CC3F91 /* AdddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687732F529D062E400CC3F91 /* AdddViewController.swift */; };
+		687732F829D0653500CC3F91 /* ListtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687732F729D0653500CC3F91 /* ListtTableViewController.swift */; };
 		68D5040429C35EA000151275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040329C35EA000151275 /* AppDelegate.swift */; };
 		68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040529C35EA000151275 /* SceneDelegate.swift */; };
 		68D5040829C35EA000151275 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5040729C35EA000151275 /* HomeViewController.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		687732F529D062E400CC3F91 /* AdddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdddViewController.swift; sourceTree = "<group>"; };
+		687732F729D0653500CC3F91 /* ListtTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListtTableViewController.swift; sourceTree = "<group>"; };
 		68D5040029C35EA000151275 /* GoshuinApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoshuinApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D5040329C35EA000151275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D5040529C35EA000151275 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				68D5040E29C35EA100151275 /* LaunchScreen.storyboard */,
 				68D5041129C35EA100151275 /* Info.plist */,
 				68D5041729C35F3600151275 /* LA_オリジナル_素材 */,
+				687732F529D062E400CC3F91 /* AdddViewController.swift */,
+				687732F729D0653500CC3F91 /* ListtTableViewController.swift */,
 			);
 			path = GoshuinApp;
 			sourceTree = "<group>";
@@ -298,6 +304,8 @@
 				68D5040829C35EA000151275 /* HomeViewController.swift in Sources */,
 				68D5040429C35EA000151275 /* AppDelegate.swift in Sources */,
 				68D5045E29C47EBC00151275 /* InfoTableViewCell.swift in Sources */,
+				687732F829D0653500CC3F91 /* ListtTableViewController.swift in Sources */,
+				687732F629D062E400CC3F91 /* AdddViewController.swift in Sources */,
 				68D5045729C37CE700151275 /* AddViewController.swift in Sources */,
 				68D5045529C37C3A00151275 /* RealmData.swift in Sources */,
 				68D5040629C35EA000151275 /* SceneDelegate.swift in Sources */,

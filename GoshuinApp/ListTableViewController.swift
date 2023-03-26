@@ -8,10 +8,10 @@
 import UIKit
 import RealmSwift
 
-class ListViewController: UIViewController, UITableViewDataSource{
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet var goshuinTableView: UITableView!
-    @IBOutlet weak var showImageView: UIImageView!
+    //@IBOutlet weak var showImageView: UIImageView!
 
     
     // Realm使う宣言
@@ -21,6 +21,7 @@ class ListViewController: UIViewController, UITableViewDataSource{
     var goshuinList: [RealmData] = []
     var goshuinListData: Results<RealmData>!
     var editCategory: RealmData!
+    var selectedImage: UIImage?
     
    
 
@@ -32,12 +33,10 @@ class ListViewController: UIViewController, UITableViewDataSource{
         self.goshuinTableView.dataSource = self
         goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         
+        
         goshuinListData = realm.objects(RealmData.self)
-        //URL型にキャスト
-        //let fileURL = URL(string: goshuinList[0].imageURL)
-        //パス型に変換
-        //let filePath = fileURL?.path
-        //showImageView.image = UIImage(contentsOfFile: filePath!)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

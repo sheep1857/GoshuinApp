@@ -12,8 +12,16 @@ import RealmSwift
 class RealmData: Object {
     
     @objc dynamic var name: String? = ""
-    @objc dynamic var adress: String? = ""
-    @objc dynamic var image: UIImage? = nil
+    @objc dynamic var address: String? = ""
+    @objc dynamic var photo = Data()
     @objc dynamic var memo: String? = ""
+    
+    convenience init(name: String, address: String, photo: Data, memo: String) {
+            self.init()
+            self.name = name
+            self.address = address
+            self.photo = photo
+            self.memo = memo
+        }
     
 }
