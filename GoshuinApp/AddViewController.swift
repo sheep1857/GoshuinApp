@@ -1,176 +1,93 @@
 //
-//  AddViewController.swift
+//  AdddViewController.swift
 //  GoshuinApp
 //
-//  Created by 木村美希 on 2023/03/17.
+//  Created by 木村美希 on 2023/03/26.
 //
 
 import UIKit
-import Foundation
 import RealmSwift
 
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
-class AddViewController: UIViewController, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate{
-
-    @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var adressTextField: UITextField!
-    //@IBOutlet var ImageView: UIImageView!
-    @IBOutlet var memoTextView: UITextView!
-    @IBOutlet var saveButton: UIBarButtonItem!
-    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     let realm = try! Realm()
-    
-    var goshuinList: [RealmData] = []
-    
-    
-    // ドキュメントディレクトリの「ファイルURL」（URL型）定義
-        //var documentDirectoryFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-
-        // ドキュメントディレクトリの「パス」（String型）定義
-        //let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-       
+    var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        //キーボードをしまう
+        //キーボードしまう
         nameTextField.delegate = self
-        adressTextField.delegate = self
+        addressTextField.delegate = self
+        memoTextView.delegate = self
         
-        // Realmの中身を確認するためのprint文
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //画像選択
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectPhoto(_:)))
+        photoImageView.addGestureRecognizer(tapGesture)
+        photoImageView.isUserInteractionEnabled = true
+    }
+
+    //写真
+    @objc func selectPhoto(_ sender: UITapGestureRecognizer) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-         
-    }
     
-    @IBAction func addPhotoButtonTapped(_ sender: Any) {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            
-            let actionSheet = UIAlertController(title: "写真を選択", message: nil, preferredStyle: .actionSheet)
-            
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                let cameraAction = UIAlertAction(title: "カメラで撮る", style: .default) { action in
-                    imagePickerController.sourceType = .camera
-                    self.present(imagePickerController, animated: true, completion: nil)
-                }
-                actionSheet.addAction(cameraAction)
-            }
-            
-            let libraryAction = UIAlertAction(title: "ライブラリから選択", style: .default) { action in
-                imagePickerController.sourceType = .photoLibrary
-                self.present(imagePickerController, animated: true, completion: nil)
-            }
-            actionSheet.addAction(libraryAction)
-            
-            let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
-            actionSheet.addAction(cancelAction)
-            
-            present(actionSheet, animated: true, completion: nil)
+    //写真表示
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImage = pickedImage
+            photoImageView.image = pickedImage
         }
+        picker.dismiss(animated: true, completion: nil)
+    }
     
-    
-    @IBAction func save(){
+    //セーブ
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        guard let name = nameTextField.text, let address = addressTextField.text else { return }
+        let memo = memoTextView.text
         
-        // .realm拡張子のデータベースをローカルに作成
-        let realm = try! Realm()
+        let shrine = RealmData()
+        shrine.name = name
+        shrine.address = address
+        shrine.memo = memo
+        if let imageData = selectedImage?.jpegData(compressionQuality: 0.1) {
+            shrine.photo = imageData
+        }
         
-        // RealmDataクラスをインスタンス化（実体化）
-        let realmData = RealmData()
-        
-        // インスタンス化したオブジェクトに値をセット
-        realmData.name = nameTextField.text!
-        realmData.adress = adressTextField.text!
-        //realmData.image = ImageView.image!
-        realmData.memo = memoTextView.text!
-        
-        // 保存のコード(データベースに書き込み)
         try! realm.write {
-            realm.add(realmData)
+            realm.add(shrine)
         }
         
         navigationController?.popViewController(animated: true)
-        
-        // Realmの中身を確認するためのprint文
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        self.dismiss(animated: true)
-        
     }
     
-   // @IBAction func addImage(_ sender: UITextField) {
-            //Realmのテーブルをインスタンス化
-            //let goshuinList = RealmData()
-            //do{
-                //try goshuinList.imageURL = documentDirectoryFileURL.absoluteString
-            //}catch{
-                //print("画像の保存に失敗しました")
-            //}
-            //try! realm.write{realm.add(goshuinList)}
-        
-            
-        //}
+    //キャンセルボタン
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
-    //保存するためのパスを作成する
-    //func createLocalDataFile() {
-        // 作成するテキストファイルの名前
-        //let fileName = "\(NSUUID().uuidString).png"
-
-        // DocumentディレクトリのfileURLを取得
-        //if documentDirectoryFileURL != nil {
-            // ディレクトリのパスにファイル名をつなげてファイルのフルパスを作る
-            //let path = documentDirectoryFileURL.appendingPathComponent(fileName)
-            //documentDirectoryFileURL = path
-        //}
-    //}
+    //Returnキーでキーボード閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
-    //画像を保存する関数の部分
-    //func saveImage() {
-        //createLocalDataFile()
-        //pngで保存する場合
-        //let pngImageData = ImageView.image?.pngData()
-        //do {
-            //try pngImageData!.write(to: documentDirectoryFileURL)
-        //} catch {
-            //エラー処理
-            //print("エラー")
-        //}
-    //}
-    
-   
-    
-    //@IBAction func selectImage() {
-        //UIImagePickerControllerのインスタンスを作成
-        //let imagePickerController: UIImagePickerController = UIImagePickerController()
-        
-        //imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        //imagePickerController.delegate = self
-        //imagePickerController.allowsEditing = true
-        
-        //フォトライブラリを呼び出す
-        //self.present(imagePickerController, animated: true, completion: nil)
-    //}
-    
-    //func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        //imageに画像を設定する
-        //let image = info[.originalImage] as? UIImage
-        
-        //ImageView.image = image
-        
-        //フォトライブラリを閉じる
-        //self.dismiss(animated: true, completion: nil)
-    //}
-    
-    
-    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
     
     
 }
+
+
+

@@ -40,7 +40,7 @@ class EditViewController: UIViewController {
         
         // TextFieldとTextViewに値を代入
         editnameTextField.text = editData.name
-        editadressTextField.text = editData.adress
+        editadressTextField.text = editData.address
         editTextView.text = editData.memo
         
         // Realmの中身を確認するためのprint文
@@ -57,7 +57,7 @@ class EditViewController: UIViewController {
         // 更新のコード(データベースに上書き)
         try! realm.write {
             self.goshuinList[passedNumber].name = editnameTextField.text!
-            self.goshuinList[passedNumber].adress = editadressTextField.text!
+            self.goshuinList[passedNumber].address = editadressTextField.text!
             self.goshuinList[passedNumber].memo = editTextView.text!
         }
         

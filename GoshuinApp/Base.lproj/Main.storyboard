@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -159,6 +160,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="画像アップロード.png" translatesAutoresizingMaskIntoConstraints="NO" id="F4u-YK-Mwd">
+                                <rect key="frame" x="76" y="272" width="240" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="85q-JV-Hj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -166,14 +171,15 @@
                     <navigationItem key="navigationItem" title="ページを追加する" id="pFm-Ps-qGl">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9w6-ng-NWu">
                             <connections>
-                                <action selector="save" destination="bbz-0f-gEL" id="DQK-AO-9Ez"/>
+                                <action selector="saveButtonPressed:" destination="bbz-0f-gEL" id="i7v-gB-HxW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="adressTextField" destination="2e0-Pr-AZQ" id="Sxg-au-LCu"/>
+                        <outlet property="addressTextField" destination="2e0-Pr-AZQ" id="1IR-Af-6il"/>
                         <outlet property="memoTextView" destination="Q7h-xy-r3z" id="qdv-M7-KbH"/>
                         <outlet property="nameTextField" destination="wj3-Rh-7Ii" id="7KI-02-cyt"/>
+                        <outlet property="photoImageView" destination="F4u-YK-Mwd" id="zVC-VB-smk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwH-6t-0Cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -215,7 +221,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="goshuinTableView" destination="Xrh-PS-K1t" id="nbu-qm-mtD"/>
                         <segue destination="1vs-Zf-0gB" kind="push" id="aQ5-fk-Y0D"/>
                     </connections>
                 </viewController>
@@ -250,27 +255,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaG-Wk-nCn">
-                                <rect key="frame" x="62" y="394" width="70" height="21"/>
+                                <rect key="frame" x="62" y="604" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nh4-HA-u9N">
-                                <rect key="frame" x="62" y="506" width="42" height="21"/>
+                                <rect key="frame" x="62" y="716" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-ir-HSh">
+                                <rect key="frame" x="76" y="335" width="240" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-Sk-gvp">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="83d-oq-BFQ"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zE0-ir-INI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oog-YJ-DPs"/>
                     <connections>
+                        <outlet property="addressTextLabel" destination="ivQ-Po-SkB" id="BZW-RL-Zzd"/>
                         <outlet property="adressTextLabel" destination="ivQ-Po-SkB" id="IGs-Yg-MNt"/>
                         <outlet property="memoTextField" destination="Nh4-HA-u9N" id="1mw-45-m8j"/>
+                        <outlet property="photoImageView" destination="BUf-ir-HSh" id="LHP-F6-4Ix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="clh-cC-flp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -357,7 +375,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTA-wL-nkq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="H65-Bh-PUN">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -374,6 +392,7 @@
         <image name="top背景.png" width="1143" height="2454"/>
         <image name="プラスアイコン２.png" width="810" height="619"/>
         <image name="ロゴ.png" width="892" height="540"/>
+        <image name="画像アップロード.png" width="810" height="630"/>
         <image name="背景.png" width="1143" height="2454"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

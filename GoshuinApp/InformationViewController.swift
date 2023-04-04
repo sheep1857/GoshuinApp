@@ -17,11 +17,14 @@ class InformationViewController: UIViewController {
     
     let realm = try! Realm()
     var shrines: Results<RealmData>!
+    var shrine: RealmData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        shrines = realm.objects(RealmData.self)
     }
     
     func goInfo(name: String, adress: String, memo: String) {

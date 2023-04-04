@@ -1,138 +1,78 @@
 //
-//  ListTableViewController.swift
+//  ListtTableViewController.swift
 //  GoshuinApp
 //
-//  Created by 木村美希 on 2023/03/17.
+//  Created by 木村美希 on 2023/03/26.
 //
 
 import UIKit
 import RealmSwift
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ListTableViewController: UITableViewController {
     
-    @IBOutlet var goshuinTableView: UITableView!
-    //@IBOutlet weak var showImageView: UIImageView!
-
-    
-    // Realm使う宣言
     let realm = try! Realm()
+    var shrines: Results<RealmData>!
     
-    // RealmData型の変数を用意（まだ空の配列）
-    var goshuinList: [RealmData] = []
-    var goshuinListData: Results<RealmData>!
-    var editCategory: RealmData!
-    var selectedImage: UIImage?
-    
-   
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TableViewの教材参照
-        self.goshuinTableView.delegate = self
-        self.goshuinTableView.dataSource = self
-        goshuinTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
-        
-        
-        goshuinListData = realm.objects(RealmData.self)
-        
-        
+        shrines = realm.objects(RealmData.self)
     }
     
+    //Realmデータ呼び出し
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        
-        
-        // Realmから受け取るデータをList変数（配列）に突っ込む
-        for object in realm.objects(RealmData.self) {
-            goshuinList.append(object)
-        }
-        
-        // tableViewを更新
-        goshuinTableView.reloadData()
-        
-        // Realmの中身を確認するためのprint文
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        tableView.reloadData()
     }
     
+    // MARK: - Table view data source
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        // List変数（配列）に格納されてるデータ
-        return goshuinList.count
+    //表示するセクション数
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // TableViewの教材参照
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
-        
-        // 取得したリストのindexPath.row番目をeachData変数に代入
-        let eachData = goshuinList[indexPath.row]
-        
-        // セルに反映
-        cell.textLabel?.text = eachData.name
-            
-        return cell
+    //行数
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shrines.count
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // セルの選択を解除
-                tableView.deselectRow(at: indexPath, animated: true)
-         
-                // 別の画面に遷移
-                performSegue(withIdentifier: "InformationViewController", sender: nil)
-    }
-    
+    //表示項目
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as! InfoTableViewCell
 
+            let shrine = shrines[indexPath.row]
+            cell.nameTextLabel.text = shrine.name
+            cell.photoImageView.image = UIImage(data: shrine.photo)
+            
+            return cell
+        }
+    
+    //タップされたら表示
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedShrine = shrines[indexPath.row]
+        performSegue(withIdentifier: "ShowDetail", sender: selectedShrine)
+    }
+
+        // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toEditVC" {
-            
-            let indexPath = goshuinTableView.indexPathForSelectedRow!
-            
-            let destination = segue.destination as? EditViewController
-            
-            destination?.passedNumber = indexPath.row
-        }
-    }
-   
-   
-}
-
-//スワイプ
-extension ListViewController: UITableViewDelegate {
-  // スワイプした時に表示するアクションの定義
-  func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-
-        
-       
-        // 編集処理
-        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
-            
-            self.editCategory = self.goshuinList[indexPath.row]
-            self.performSegue(withIdentifier: "toEdit", sender: nil)
-            
-          print("Editがタップされました")
-
-        completionHandler(true)
-        }
-        
-        //削除処理
-        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [self] (action, view, completionHandler) in
-            
-            try! self.realm.write {
-                let item = goshuinList.remove(at: indexPath.row)
-                realm.delete(item)
+        if segue.identifier == "ShowDetail" {
+            if let informationViewController = segue.destination as? InformationViewController,
+               let selectedShrine = sender as? RealmData {
+                informationViewController.shrine = selectedShrine
             }
-            tableView.reloadData()
-            print("Deleteがタップされました")
-            
-            completionHandler(true)
         }
-        
-        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
+
+        
+        @IBAction func unwindToShrineList(_ unwindSegue: UIStoryboardSegue) {
+            // Use data from the view controller which initiated the unwind segue
+        }
+
     
+
 }
+
+   
