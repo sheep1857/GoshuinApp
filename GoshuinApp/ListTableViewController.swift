@@ -25,9 +25,13 @@ class ListTableViewController: UITableViewController {
         
         if let data = UserDefaults.standard.value(forKey: "ShrineArray") as? Data {
             if let loadedShrineArray = try? PropertyListDecoder().decode([RealmData].self, from: data) {
-                self.shrines = loadedShrineArray
+                try! realm.write {
+                    realm.add(loadedShrineArray, update: .modified)
+                }
+                self.shrines = realm.objects(RealmData.self)
             }
-           }
+        }
+
     }
     
     // MARK: - Table view data source
