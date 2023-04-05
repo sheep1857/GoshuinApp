@@ -23,7 +23,11 @@ class ListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        if let data = UserDefaults.standard.value(forKey: "ShrineArray") as? Data {
+            if let loadedShrineArray = try? PropertyListDecoder().decode([shrines].self, from: data) {
+                self.shrineArray = loadedShrineArray
+            }
+           }
     }
     
     // MARK: - Table view data source
@@ -35,17 +39,15 @@ class ListTableViewController: UITableViewController {
     
     //行数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shrines.count
+        return self.shrines.count
     }
     
     //表示項目
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell", for: indexPath) as! InfoTableViewCell
-
-            let shrine = shrines[indexPath.row]
-            cell.nameTextLabel.text = shrine.name
-            cell.photoImageView.image = UIImage(data: shrine.photo)
-            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            let shrine = self.shrineArray[indexPath.row]
+            cell.textLabel?.text = shrine.name
+            cell.detailTextLabel?.text = shrine.address
             return cell
         }
     
