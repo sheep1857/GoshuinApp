@@ -24,8 +24,8 @@ class ListTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         if let data = UserDefaults.standard.value(forKey: "ShrineArray") as? Data {
-            if let loadedShrineArray = try? PropertyListDecoder().decode([shrines].self, from: data) {
-                self.shrineArray = loadedShrineArray
+            if let loadedShrineArray = try? PropertyListDecoder().decode([RealmData].self, from: data) {
+                self.shrines = loadedShrineArray
             }
            }
     }
@@ -45,7 +45,7 @@ class ListTableViewController: UITableViewController {
     //表示項目
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            let shrine = self.shrineArray[indexPath.row]
+            let shrine = self.shrines[indexPath.row]
             cell.textLabel?.text = shrine.name
             cell.detailTextLabel?.text = shrine.address
             return cell
