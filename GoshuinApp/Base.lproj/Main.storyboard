@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="820.61068702290072" y="3.5211267605633805"/>
         </scene>
-        <!--ページを追加する-->
+        <!--戻る-->
         <scene sceneID="FDE-EQ-1ap">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="bbz-0f-gEL" customClass="AddViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,13 +168,7 @@
                         <viewLayoutGuide key="safeArea" id="85q-JV-Hj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ページを追加する" id="pFm-Ps-qGl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9w6-ng-NWu">
-                            <connections>
-                                <action selector="saveButtonPressed:" destination="bbz-0f-gEL" id="i7v-gB-HxW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="戻る" largeTitleDisplayMode="always" id="s4O-Hg-WhD"/>
                     <connections>
                         <outlet property="addressTextField" destination="2e0-Pr-AZQ" id="1IR-Af-6il"/>
                         <outlet property="memoTextView" destination="Q7h-xy-r3z" id="qdv-M7-KbH"/>
@@ -186,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="1954.9618320610687" y="764.78873239436621"/>
         </scene>
-        <!--リストから探す-->
+        <!--Title-->
         <scene sceneID="y5x-Bm-AAc">
             <objects>
-                <viewController id="N8V-kj-Ydi" customClass="ListViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N8V-kj-Ydi" customClass="ListTableViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="feF-Qu-BPy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,17 +203,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bnl-Xs-nkb">
+                                <rect key="frame" x="0.0" y="44" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="リストから探す" id="y3P-fW-5RA">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ckg-D4-v6c">
+                                            <connections>
+                                                <segue destination="bbz-0f-gEL" kind="show" id="gB7-T6-hoW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DtP-gC-opK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="リストから探す" id="n7H-Ug-doC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JDP-oU-UqF">
-                            <connections>
-                                <segue destination="bbz-0f-gEL" kind="push" id="Vym-oG-6gz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="5Ym-Zm-azp"/>
                     <connections>
                         <segue destination="1vs-Zf-0gB" kind="push" id="aQ5-fk-Y0D"/>
                     </connections>
