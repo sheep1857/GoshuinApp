@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import MapKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
@@ -14,6 +15,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var mapView: MKMapView!
+
     
     let realm = try! Realm()
     var selectedImage: UIImage?
@@ -50,6 +53,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         picker.dismiss(animated: true, completion: nil)
     }
     
+    
+    
     //セーブ
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         guard let name = nameTextField.text, let address = addressTextField.text else { return }
@@ -68,6 +73,26 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         
         navigationController?.popViewController(animated: true)
+        
+        // 住所を元に緯度経度を取得する
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(self.addressTextField.text ?? "") { (placemarks, error) in
+                guard let placemarks = placemarks, let location = placemarks.first?.location else {
+                    // 緯度経度を取得できなかった場合の処理
+                    return
+                }
+
+                // 緯度経度を取得できた場合の処理
+
+                // MKMapViewにアノテーションを追加する
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = location.coordinate
+                self.mapView.addAnnotation(annotation)
+                        
+                // MKMapViewの表示範囲を設定する
+                let region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+                self.mapView.setRegion(region, animated: true)
+            }
     }
     
     //キャンセルボタン
@@ -88,6 +113,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
 }
+
+
+
 
 
 

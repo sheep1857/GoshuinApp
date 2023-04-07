@@ -93,6 +93,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="プラスアイコン２.png"/>
+                                <connections>
+                                    <segue destination="bbz-0f-gEL" kind="push" id="7QU-Tf-L7f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MeC-nQ-5Bb"/>
@@ -107,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="820.61068702290072" y="3.5211267605633805"/>
         </scene>
-        <!--戻る-->
+        <!--Add View Controller-->
         <scene sceneID="FDE-EQ-1ap">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="bbz-0f-gEL" customClass="AddViewController" customModule="GoshuinApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -168,7 +171,9 @@
                         <viewLayoutGuide key="safeArea" id="85q-JV-Hj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="戻る" largeTitleDisplayMode="always" id="s4O-Hg-WhD"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="s4O-Hg-WhD">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="B99-1S-X4M"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="2e0-Pr-AZQ" id="1IR-Af-6il"/>
                         <outlet property="memoTextView" destination="Q7h-xy-r3z" id="qdv-M7-KbH"/>
@@ -389,6 +394,9 @@
             <point key="canvasLocation" x="-121" y="765"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7QU-Tf-L7f"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="top背景.png" width="1143" height="2454"/>
         <image name="プラスアイコン２.png" width="810" height="619"/>
